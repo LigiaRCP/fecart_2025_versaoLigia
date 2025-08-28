@@ -1,7 +1,15 @@
+import os
+from dotenv import load_dotenv
 from google import genai
 
+load_dotenv()  # carrega variáveis do .env
+api_key = os.getenv("GOOGLE_API_KEY")
 
-client = genai.Client(api_key='AIzaSyClaR5XlKEjT6KUComKEK8MjAMOaKjso1g')
+if not api_key:
+    raise ValueError("API key não encontrada! Verifique seu arquivo .env")
+
+client = genai.Client(api_key=api_key)
+
 chat = client.chats.create(model="gemini-2.5-flash")
 print('''
 1- Einstein
