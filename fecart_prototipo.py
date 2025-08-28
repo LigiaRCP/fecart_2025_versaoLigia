@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from google import genai
 
-load_dotenv()  # carrega variáveis do .env
+load_dotenv() 
 api_key = os.getenv("GOOGLE_API_KEY")
 
 if not api_key:
