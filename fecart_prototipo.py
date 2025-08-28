@@ -2,11 +2,11 @@ import os
 from dotenv import load_dotenv
 from google import genai
 
-load_dotenv()  # carrega variáveis do .env
+load_dotenv() 
 api_key = os.getenv("GOOGLE_API_KEY")
 
 if not api_key:
-    raise ValueError("API key não encontrada! Verifique seu arquivo .env")
+    raise ValueError("API key não encontrada")
 
 client = genai.Client(api_key=api_key)
 
