@@ -6,7 +6,7 @@ load_dotenv()
 api_key = os.getenv("GOOGLE_API_KEY")
 
 if not api_key:
-    raise ValueError("API key não encontrada")
+    raise ValueError("Chave da API não encontrada")
 
 client = genai.Client(api_key=api_key)
 
